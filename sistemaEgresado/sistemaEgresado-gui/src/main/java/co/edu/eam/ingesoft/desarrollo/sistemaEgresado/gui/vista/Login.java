@@ -187,20 +187,20 @@ private controladorLogin controlador;
             InformacionAcademica info=controlador.buscar((Integer.parseInt(tfCodigo.getText())));
             if (egresado != null && egresado.getNumeroDocumento().equalsIgnoreCase(jPassword.getText())) {
                 
-                VentanaEgresado v = new VentanaEgresado();
-                v.tfNombreEgresado.setText(egresado.getNombre());
-                v.tfApellidosEgresado.setText(egresado.getApellido());
-                v.tfCelularEgresado.setText(egresado.getTelefono());
-                v.tfCorreoEgresado.setText(egresado.getCorreo());
-                v.tfNumeroDocumentoEgresado.setText(egresado.getNumeroDocumento());
-                v.cbTipoDocumentoEgresado.setSelectedItem(egresado.getTipoDocumento());
-                v.tFEgresado.setText(egresado.getCodigoEgresado()+"");
-                v.tfNumeroDiploma.setText(info.getNumeroDiploma());
-                v.jDFechaGrado.setDate(info.getFechaGrado());
+               // VentanaEgresado v = new VentanaEgresado();
+//                v.tfNombreEgresado.setText(egresado.getNombre());
+//                v.tfApellidosEgresado.setText(egresado.getApellido());
+//                v.tfCelularEgresado.setText(egresado.getTelefono());
+//                v.tfCorreoEgresado.setText(egresado.getCorreo());
+//                v.tfNumeroDocumentoEgresado.setText(egresado.getNumeroDocumento());
+//                v.cbTipoDocumentoEgresado.setSelectedItem(egresado.getTipoDocumento());
+//                v.tFEgresado.setText(egresado.getCodigoEgresado()+"");
+//                v.tfNumeroDiploma.setText(info.getNumeroDiploma());
+//                v.jDFechaGrado.setDate(info.getFechaGrado());
                // v.jCBProgramaAca.
 //                
                              
-                v.setVisible(true);
+              //  v.setVisible(true);
             }else if(empresa!=null && empresa.getRazonSocial().equalsIgnoreCase(jPassword.getText())){
                 VentanaEmpresa ve= new VentanaEmpresa();
                 ve.jCBCiudad.setSelectedItem(empresa.getCiudad());

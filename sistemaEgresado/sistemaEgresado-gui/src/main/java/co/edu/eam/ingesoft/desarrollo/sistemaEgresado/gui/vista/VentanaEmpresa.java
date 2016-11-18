@@ -613,15 +613,9 @@ public class VentanaEmpresa extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-<<<<<<< HEAD
-    private javax.swing.JComboBox jCBCiudad;
-    private javax.swing.JComboBox jCBDepartamento;
-    private javax.swing.JComboBox jCBPais;
-    private javax.swing.JComboBox jCBSectorLaboral;
-    private javax.swing.JCheckBox jCKBPrivada;
-    private javax.swing.JCheckBox jCKBPublica;
+
     private javax.swing.JLabel jLRegistroEmpresa;
-=======
+
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     public javax.swing.JComboBox jCBCiudad;
@@ -630,7 +624,7 @@ public class VentanaEmpresa extends javax.swing.JFrame {
     public javax.swing.JComboBox jCBSectorLaboral;
     public javax.swing.JCheckBox jCKBPrivada;
     public javax.swing.JCheckBox jCKBPublica;
->>>>>>> branch 'master' of https://github.com/sebastianslz/sistemaEgresadoEAM.git
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -648,18 +642,7 @@ public class VentanaEmpresa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-<<<<<<< HEAD
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTFCargo;
-    private javax.swing.JTextField jTFCodigoEmpresa;
-    private javax.swing.JTextField jTFCorreoContacto;
-    private javax.swing.JTextField jTFDireccion;
-    private javax.swing.JTextField jTFPaginaWeb;
-    private javax.swing.JTextField jTFRazonSocial;
-    private javax.swing.JTextField jTFTelefono;
-    private javax.swing.JTextField jTFTelefonoCon;
-    private javax.swing.JTextField jTNombreContacto;
-=======
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
@@ -675,7 +658,6 @@ public class VentanaEmpresa extends javax.swing.JFrame {
     public javax.swing.JTextField jTFTelefono;
     public javax.swing.JTextField jTFTelefonoCon;
     public javax.swing.JTextField jTNombreContacto;
->>>>>>> branch 'master' of https://github.com/sebastianslz/sistemaEgresadoEAM.git
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
