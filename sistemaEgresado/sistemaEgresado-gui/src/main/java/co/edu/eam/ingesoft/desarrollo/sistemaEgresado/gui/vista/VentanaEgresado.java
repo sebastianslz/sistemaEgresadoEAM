@@ -563,17 +563,17 @@ public class VentanaEgresado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JComboBox cbTipoDocumentoEgresado;
+    public javax.swing.JComboBox cbTipoDocumentoEgresado;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox jCBFacultad;
-    private javax.swing.JComboBox jCBNivelAca;
+    public javax.swing.JComboBox jCBFacultad;
+    public javax.swing.JComboBox jCBNivelAca;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JComboBox jComboBox4;
-    private com.toedter.calendar.JDateChooser jDFechaGrado;
+    public com.toedter.calendar.JDateChooser jDFechaGrado;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
     private javax.swing.JLabel jLabel1;
@@ -603,13 +603,13 @@ public class VentanaEgresado extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton jbEditar;
-    private javax.swing.JComboBox jcbprograma;
-    private javax.swing.JTextField tFEgresado;
-    private javax.swing.JTextField tfApellidosEgresado;
-    private javax.swing.JTextField tfCelularEgresado;
-    private javax.swing.JTextField tfCorreoEgresado;
-    private javax.swing.JTextField tfNombreEgresado;
-    private javax.swing.JTextField tfNumeroDiploma;
-    private javax.swing.JTextField tfNumeroDocumentoEgresado;
+    public javax.swing.JComboBox jcbprograma;
+    public javax.swing.JTextField tFEgresado;
+    public javax.swing.JTextField tfApellidosEgresado;
+    public javax.swing.JTextField tfCelularEgresado;
+    public javax.swing.JTextField tfCorreoEgresado;
+    public javax.swing.JTextField tfNombreEgresado;
+    public javax.swing.JTextField tfNumeroDiploma;
+    public javax.swing.JTextField tfNumeroDocumentoEgresado;
     // End of variables declaration//GEN-END:variables
 }
