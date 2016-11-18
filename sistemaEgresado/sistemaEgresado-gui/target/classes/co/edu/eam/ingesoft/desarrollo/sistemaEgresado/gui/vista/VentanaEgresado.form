@@ -274,7 +274,7 @@
                               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jCBFacultad" alignment="0" pref="247" max="32767" attributes="0"/>
-                                  <Component id="jCBProgramaAca" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jcbprograma" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jDFechaGrado" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jCBNivelAca" alignment="0" max="32767" attributes="0"/>
                                   <Component id="tfNumeroDiploma" alignment="0" max="32767" attributes="0"/>
@@ -284,7 +284,7 @@
                               <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
                               <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbEditar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="91" max="32767" attributes="0"/>
@@ -304,7 +304,7 @@
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCBProgramaAca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jcbprograma" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -324,7 +324,7 @@
                       <EmptySpace pref="58" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
@@ -383,8 +383,11 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jCBFacultadItemStateChanged"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jCBProgramaAca">
+            <Component class="javax.swing.JComboBox" name="jcbprograma">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Console" size="14" style="3"/>
@@ -403,10 +406,13 @@
                 <Property name="text" type="java.lang.String" value="Siguiente"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="jbEditar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbEditarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="jCBNivelAca">
               <Properties>

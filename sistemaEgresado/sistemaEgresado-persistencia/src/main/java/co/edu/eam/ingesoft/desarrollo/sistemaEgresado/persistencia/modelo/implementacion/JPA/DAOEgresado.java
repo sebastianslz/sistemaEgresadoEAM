@@ -25,10 +25,11 @@ public class DAOEgresado implements IDAOEgresado {
 	/**
 	 * Este metodo edita un egresado
 	 */
-	public void editar(Egresado egresado) throws Exception {
+	public void editar(Egresado egresado, InformacionAcademica infor) throws Exception {
 		EntityManager em= AdministradorEntetyManager.getEntityManager();
 		em.getTransaction().begin();
 		em.merge(egresado);
+                em.merge(infor);
 		em.getTransaction().commit();
 	}
 

@@ -1,8 +1,10 @@
 package co.edu.eam.ingesoft.desarrollo.sistemaEgresado.gui.controlador;
 
+import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Egresado;
 import java.util.List;
 
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.FacultadAcademica;
+import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.InformacionAcademica;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.ProgramaAcademica;
 import co.edu.eam.ingesotf.desarrollo.sistemaEgresado.logica.bos.BOEgresado;
 import co.edu.eam.ingesotf.desarrollo.sistemaEgresado.logica.bos.BOFacultadAcademica;
@@ -28,5 +30,9 @@ public class ControladorVentanaEgresado {
     
     public List<ProgramaAcademica> listarPrograma(FacultadAcademica facultad) throws Exception {
         return boProg.listarPrograma(facultad);
+    }
+    
+    public void editar(Egresado egresado, InformacionAcademica infor) throws Exception {
+        boEgresado.editar(egresado, infor);
     }
 }

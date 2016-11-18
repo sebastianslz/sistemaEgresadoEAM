@@ -39,4 +39,8 @@ public class BOEgresado {
             daoEgresado.crear(egresado, infor);
         }
     }
+    
+    public void editar(Egresado egresado, InformacionAcademica infor) throws Exception {
+        daoEgresado.editar(egresado, infor);
+    }
 }

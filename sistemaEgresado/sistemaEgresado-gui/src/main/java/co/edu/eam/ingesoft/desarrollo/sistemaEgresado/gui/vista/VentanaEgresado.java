@@ -5,22 +5,62 @@
  */
 package co.edu.eam.ingesoft.desarrollo.sistemaEgresado.gui.vista;
 
+import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.gui.controlador.ControladorVentanaEgresado;
+import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Egresado;
+import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.FacultadAcademica;
+import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.InformacionAcademica;
+import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.ProgramaAcademica;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.enumeraciones.NivelAcademico;
+import co.edu.eam.ingesotf.desarrollo.sistemaEgresado.logica.Excepcion.ExcepcionNegocio;
+import java.util.Date;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Cristian Sinisterra
  */
 public class VentanaEgresado extends javax.swing.JFrame {
-
+    ControladorVentanaEgresado controlador;
     /**
      * Creates new form VentanaEgresado
      */
     public VentanaEgresado() {
         initComponents();
+        controlador= new ControladorVentanaEgresado();
         jCBNivelAca.addItem(NivelAcademico.DIPLOMADO);
         jCBNivelAca.addItem(NivelAcademico.POSTGRADO);
         jCBNivelAca.addItem(NivelAcademico.PREGRADO);
+        try {
+            listar();
+        } catch (Exception ex) {
+           ex.printStackTrace();
+        }
+    }
+    
+    public void  listar()throws Exception{
+    	jCBFacultad.removeAllItems();
+    	jCBFacultad.addItem("Seleccione una facultad");
+        List<FacultadAcademica> lista=controlador.listarFacultad();
+    	for(int i=0; i<lista.size(); i++){
+			jCBFacultad.addItem(lista.get(i));
+			System.out.println(lista.get(i));
+		
+		}
+    	   	
+    	
+    }
+    
+    public void cargarPrograma(List<ProgramaAcademica> lista) {
+        jcbprograma.removeAllItems();
+        if (lista != null) {
+            jcbprograma.addItem("Seleccione un programa");
+            for (int i = 0; i < lista.size(); i++) {
+                jcbprograma.addItem(lista.get(i));
+            }
+        } else {
+            jcbprograma.addItem(null);
+        }
     }
 
     /**
@@ -59,11 +99,11 @@ public class VentanaEgresado extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jCBFacultad = new javax.swing.JComboBox();
-        jCBProgramaAca = new javax.swing.JComboBox();
+        jcbprograma = new javax.swing.JComboBox();
         jDFechaGrado = new com.toedter.calendar.JDateChooser();
         tfNumeroDiploma = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jbEditar = new javax.swing.JButton();
         jCBNivelAca = new javax.swing.JComboBox();
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -210,12 +250,22 @@ public class VentanaEgresado extends javax.swing.JFrame {
 
         jCBFacultad.setFont(new java.awt.Font("Lucida Console", 3, 14)); // NOI18N
         jCBFacultad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una facultad" }));
+        jCBFacultad.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCBFacultadItemStateChanged(evt);
+            }
+        });
 
-        jCBProgramaAca.setFont(new java.awt.Font("Lucida Console", 3, 14)); // NOI18N
+        jcbprograma.setFont(new java.awt.Font("Lucida Console", 3, 14)); // NOI18N
 
         jButton3.setText("Siguiente");
 
-        jButton5.setText("Editar");
+        jbEditar.setText("Editar");
+        jbEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -234,7 +284,7 @@ public class VentanaEgresado extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jCBFacultad, 0, 247, Short.MAX_VALUE)
-                            .addComponent(jCBProgramaAca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jcbprograma, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jDFechaGrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jCBNivelAca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfNumeroDiploma)))
@@ -242,7 +292,7 @@ public class VentanaEgresado extends javax.swing.JFrame {
                         .addGap(168, 168, 168)
                         .addComponent(jButton3)
                         .addGap(45, 45, 45)
-                        .addComponent(jButton5)))
+                        .addComponent(jbEditar)))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -257,7 +307,7 @@ public class VentanaEgresado extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jCBProgramaAca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jcbprograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
                         .addComponent(jLabel9))
                     .addComponent(jDFechaGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -272,7 +322,7 @@ public class VentanaEgresado extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton5))
+                    .addComponent(jbEditar))
                 .addGap(25, 25, 25))
         );
 
@@ -430,6 +480,51 @@ public class VentanaEgresado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCorreoEgresadoActionPerformed
 
+    private void jbEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEditarActionPerformed
+        // TODO add your handling code here:
+        try{
+        int codigoE= Integer.parseInt(tFEgresado.getText());
+        String nombre= tfNombreEgresado.getText();
+        String tipoDocu=(String) cbTipoDocumentoEgresado.getSelectedItem();
+        String numeroDocu= tfNumeroDocumentoEgresado.getText();
+        String correo= tfCorreoEgresado.getText();
+        String celular=tfCelularEgresado.getText();
+        ProgramaAcademica programa=(ProgramaAcademica) jcbprograma.getSelectedItem();
+        Egresado egresado= new Egresado(codigoE, nombre, celular, tipoDocu, numeroDocu, correo, celular, programa);
+        Date fechaGrado= jDFechaGrado.getDate();
+        NivelAcademico nivelAcademico= (NivelAcademico) jCBNivelAca.getSelectedItem();
+        String numeroDiploma= tfNumeroDiploma.getText();
+        InformacionAcademica infor= new InformacionAcademica(codigoE, fechaGrado, nivelAcademico, numeroDiploma);
+        infor.setEgresado(egresado);
+        controlador.editar(egresado, infor);
+               
+        }catch(ExcepcionNegocio e){
+        	 JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }catch(Exception e1){
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_jbEditarActionPerformed
+
+    private void jCBFacultadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCBFacultadItemStateChanged
+        // TODO add your handling code here:
+         try {
+            if (jCBFacultad.getSelectedIndex() == 0) {
+                cargarPrograma(null);
+            } else {
+                FacultadAcademica facu = (FacultadAcademica) jCBFacultad.getSelectedItem();
+                if(facu == null){
+                    return;
+                }
+                
+                List<ProgramaAcademica> evals = controlador.listarPrograma(facu);
+                cargarPrograma(evals);
+            }
+        } catch (Exception exc) {
+            
+            exc.printStackTrace();
+        }
+    }//GEN-LAST:event_jCBFacultadItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -468,19 +563,17 @@ public class VentanaEgresado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    public javax.swing.JComboBox cbTipoDocumentoEgresado;
+    private javax.swing.JComboBox cbTipoDocumentoEgresado;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    public javax.swing.JComboBox jCBFacultad;
-    public javax.swing.JComboBox jCBNivelAca;
-    public javax.swing.JComboBox jCBProgramaAca;
+    private javax.swing.JComboBox jCBFacultad;
+    private javax.swing.JComboBox jCBNivelAca;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JComboBox jComboBox4;
-    public com.toedter.calendar.JDateChooser jDFechaGrado;
+    private com.toedter.calendar.JDateChooser jDFechaGrado;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
     private javax.swing.JLabel jLabel1;
@@ -509,12 +602,14 @@ public class VentanaEgresado extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    public javax.swing.JTextField tFEgresado;
-    public javax.swing.JTextField tfApellidosEgresado;
-    public javax.swing.JTextField tfCelularEgresado;
-    public javax.swing.JTextField tfCorreoEgresado;
-    public javax.swing.JTextField tfNombreEgresado;
-    public javax.swing.JTextField tfNumeroDiploma;
-    public javax.swing.JTextField tfNumeroDocumentoEgresado;
+    private javax.swing.JButton jbEditar;
+    private javax.swing.JComboBox jcbprograma;
+    private javax.swing.JTextField tFEgresado;
+    private javax.swing.JTextField tfApellidosEgresado;
+    private javax.swing.JTextField tfCelularEgresado;
+    private javax.swing.JTextField tfCorreoEgresado;
+    private javax.swing.JTextField tfNombreEgresado;
+    private javax.swing.JTextField tfNumeroDiploma;
+    private javax.swing.JTextField tfNumeroDocumentoEgresado;
     // End of variables declaration//GEN-END:variables
 }

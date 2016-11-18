@@ -17,7 +17,7 @@ public interface IDAOEgresado {
 	 * @param egresado, que se va editar
 	 * @throws Exception
 	 */
-	public void editar (Egresado egresado) throws Exception;
+	public void editar (Egresado egresado, InformacionAcademica infor) throws Exception;
 	
 	/**
 	 * Busca un egresado
