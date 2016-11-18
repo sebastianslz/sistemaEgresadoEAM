@@ -24,4 +24,8 @@ public class BOSectorLaboral {
      public List<SectorLaboral> listarSectorLaboral() throws Exception {
          return daoSector.listarSectorLaboral();
      }
+     
+     public void crear(SectorLaboral sector)throws Exception{
+    	 daoSector.crear(sector);
+     }
 }

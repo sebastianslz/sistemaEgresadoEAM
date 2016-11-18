@@ -5,6 +5,8 @@
  */
 package co.edu.eam.ingesoft.desarrollo.sistemaEgresado.gui.vista;
 
+import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.enumeraciones.NivelAcademico;
+
 /**
  *
  * @author Cristian Sinisterra
@@ -16,6 +18,9 @@ public class VentanaEgresado extends javax.swing.JFrame {
      */
     public VentanaEgresado() {
         initComponents();
+        jCBNivelAca.addItem(NivelAcademico.DIPLOMADO);
+        jCBNivelAca.addItem(NivelAcademico.POSTGRADO);
+        jCBNivelAca.addItem(NivelAcademico.PREGRADO);
     }
 
     /**

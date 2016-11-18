@@ -27,4 +27,10 @@ public class DAOProgramaAcademico implements IDAOProgramaAcademici{
         return query.getResultList();
     }
     
+    public void crear(ProgramaAcademica programa)throws Exception{
+    	EntityManager em= AdministradorEntetyManager.getEntityManager();
+    	em.getTransaction().begin();
+    	em.persist(programa);
+    	em.getTransaction().commit();
+    }
 }

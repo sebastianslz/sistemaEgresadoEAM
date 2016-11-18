@@ -29,5 +29,12 @@ public class DAOSectorLaboral implements IDAOSectorLaboral{
 		
 	}
     
+    public void crear (SectorLaboral sector)throws Exception{
+    	EntityManager em= AdministradorEntetyManager.getEntityManager();
+    	em.getTransaction().begin();
+    	em.persist(sector);
+    	em.getTransaction().commit();
+    }
+    
     
 }

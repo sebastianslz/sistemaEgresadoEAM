@@ -14,4 +14,6 @@ import java.util.List;
  */
 public interface IDAOSectorLaboral {
     public List<SectorLaboral> listarSectorLaboral()throws Exception;
+    
+    public void crear (SectorLaboral sector)throws Exception;
 }

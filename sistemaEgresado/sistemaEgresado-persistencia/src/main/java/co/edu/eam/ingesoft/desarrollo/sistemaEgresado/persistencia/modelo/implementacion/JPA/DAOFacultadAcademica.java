@@ -26,5 +26,13 @@ public class DAOFacultadAcademica implements IDAOFacultadAcademica{
 		System.out.println(lista.size());
 		return lista;
     }
+
+	public void crear(FacultadAcademica facultad) throws Exception {
+		 EntityManager em= AdministradorEntetyManager.getEntityManager();
+		 em.getTransaction().begin();
+		 em.persist(facultad);
+		 em.getTransaction().commit();
+		
+	}
     
 }
