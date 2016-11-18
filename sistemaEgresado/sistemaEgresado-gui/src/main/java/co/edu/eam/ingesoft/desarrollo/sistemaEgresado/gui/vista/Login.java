@@ -200,7 +200,7 @@ private controladorLogin controlador;
                // v.jCBProgramaAca.
 //                
                              
-                v.setVisible(true);
+              //  v.setVisible(true);
             }else if(empresa!=null && empresa.getRazonSocial().equalsIgnoreCase(jPassword.getText())){
                 VentanaEmpresa ve= new VentanaEmpresa();
                 ve.jCBCiudad.setSelectedItem(empresa.getCiudad());
