@@ -3,6 +3,11 @@ package co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.defin
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.ContactoEmpresa;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Empresa;
 
+/**
+ * Interface que realiza las operaciones de un contacto de la empresa
+ * @author Sebastian
+ *
+ */
 public interface IDAOContacto {
 
 	/**

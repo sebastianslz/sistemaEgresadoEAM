@@ -19,7 +19,7 @@ import co.edu.eam.ingesotf.desarrollo.sistemaEgresado.logica.bos.BOSectorLaboral
 import java.util.List;
 
 /**
- *
+ *Clase responsable de controlar la venta registro empresa
  * @author Cristian Sinisterra
  */
 public class controladorVentanaRegistroEmpresa {
@@ -37,22 +37,50 @@ public class controladorVentanaRegistroEmpresa {
         boSectorLaboral=new BOSectorLaboral();
     }
     
+    /**
+     * Metodo para listar los departamentos
+     * @param pais, pais del departamento
+     * @return
+     * @throws Exception
+     */
     public List<Departamento> listarDepartamento(Pais pais)throws Exception{
         return boDepartamento.listarDepartamento(pais);
     }
     
+    /**
+     * Metodo para listar un pais
+     * @return
+     * @throws Exception
+     */
     public List<Pais> listarPais()throws Exception{
         return boPais.listarPais();
     }
     
+    /**
+     * Metodo para listar una ciudad
+     * @param departamento, departamento de la ciudad
+     * @return
+     * @throws Exception
+     */
     public List<Ciudad> listarCiudades(Departamento departamento)throws Exception{
         return boCiudad.listarCiudades(departamento);
     }
     
+    /**
+     * Metodo para crear empresa
+     * @param empresa, empresa a crear
+     * @param contacto, contacto de la empresa a crear
+     * @throws Exception
+     */
     public void CrearEmpresa(Empresa empresa, ContactoEmpresa contacto)throws Exception{
         boEmpresa.crearEmpresa(empresa, contacto);
     }
     
+    /**
+     * Metodo para listar el sector laboral
+     * @return
+     * @throws Exception
+     */
      public List<SectorLaboral> listarSectorLaboral() throws Exception {
          return boSectorLaboral.listarSectorLaboral();
      }

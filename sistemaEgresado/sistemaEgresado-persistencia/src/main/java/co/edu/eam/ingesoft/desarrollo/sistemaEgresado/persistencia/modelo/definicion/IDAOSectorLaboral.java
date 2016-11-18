@@ -9,7 +9,7 @@ import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entida
 import java.util.List;
 
 /**
- *
+ *Interface que realiza las operaciones de un sector laboral
  * @author Cristian Sinisterra
  */
 public interface IDAOSectorLaboral {

@@ -3,6 +3,11 @@ package co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.defin
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Egresado;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.InformacionAcademica;
 
+/**
+ * Interface que realiza las operaciones de un egresado
+ * @author Sebastian
+ *
+ */
 public interface IDAOEgresado {
 	
 	/**

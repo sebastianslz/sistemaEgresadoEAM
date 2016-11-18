@@ -15,7 +15,7 @@ import co.edu.eam.ingesotf.desarrollo.sistemaEgresado.logica.bos.BOEmpresa;
 import co.edu.eam.ingesotf.desarrollo.sistemaEgresado.logica.bos.BOInformacionAcademica;
 
 /**
- *
+ *Clase responsable de controlar la ventana login
  * @author Cristian Sinisterra
  */
 public class controladorLogin {
@@ -32,19 +32,43 @@ public class controladorLogin {
        bOContacto= new BOContacto();
     }
     
+    /**
+     * Metodo que busca un egresado por su codigo
+     * @param codigo, codigo del egresado a buscar
+     * @return
+     * @throws Exception
+     */
     public Egresado buscarEgresado(int codigo) throws Exception{
 		return boEgresado.buscar(codigo);
                 
 	}
     
+    /**
+     * Metodo que busca la informacion academica 
+     * @param codigo
+     * @return
+     * @throws Exception
+     */
     public InformacionAcademica buscar(int codigo)throws Exception{
         return bOInformacionAcademica.buscar(codigo);
     }
     
+    /**
+     * Metodo que busca la empresa por su codigo
+     * @param codigo
+     * @return
+     * @throws Exception
+     */
     public Empresa buscarEmpresa(int codigo)throws Exception{
         return boEmpresa.buscar(codigo);
     }
     
+    /**
+     * Metodo que busca el contacto de la empresa
+     * @param codigo
+     * @return
+     * @throws Exception
+     */
     public ContactoEmpresa buscarContacto(int codigo)throws Exception{
         return bOContacto.buscar(codigo);
     }

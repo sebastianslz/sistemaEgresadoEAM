@@ -16,7 +16,7 @@ import co.edu.eam.ingesotf.desarrollo.sistemaEgresado.logica.bos.BOProgramaAcade
 import java.util.List;
 
 /**
- *
+ *Clase responsable de controlar la ventana registro egresado
  * @author Cristian Sinisterra
  */
 public class controladorVentanaRegistroEgresado {
@@ -33,16 +33,32 @@ public class controladorVentanaRegistroEgresado {
         
     }
     
+    /**
+     * Metodo para listar las facultades
+     * @return
+     * @throws Exception
+     */
     public List<FacultadAcademica> listarFacultad() throws Exception {
        return boFacultad.listarFacultad();
     }
     
+    /**
+     * Metodo para crear la informacion academica de un egresado
+     * @param egresado
+     * @param infor
+     * @throws Exception
+     */
     public void crear(Egresado egresado, InformacionAcademica infor)throws Exception{
         boEgresado.crearEgresado(egresado, infor);
     }
     
    
-    
+    /**
+     * Metodo para listar los programas academicos
+     * @param facultad, facultad del programa academico
+     * @return
+     * @throws Exception
+     */
      public List<ProgramaAcademica> listarPrograma(FacultadAcademica facultad) throws Exception {
          return boProg.listarPrograma(facultad);
      }

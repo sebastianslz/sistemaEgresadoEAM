@@ -7,7 +7,7 @@ import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entida
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Pais;
 
 /**
- * Interface que se encarga de la ciudad
+ * Interface que se encarga derelaizar las operaciones de la ciudad
  * @author Cristian Sinisterra
  */
 public interface IDAOCiudad {

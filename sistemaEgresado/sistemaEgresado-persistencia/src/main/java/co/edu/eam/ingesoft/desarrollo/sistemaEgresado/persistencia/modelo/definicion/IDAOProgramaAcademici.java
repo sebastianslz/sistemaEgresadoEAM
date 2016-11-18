@@ -10,7 +10,7 @@ import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entida
 import java.util.List;
 
 /**
- *
+ *Interface que realzia las operaciones de un programa academico
  * @author Cristian Sinisterra
  */
 public interface IDAOProgramaAcademici {

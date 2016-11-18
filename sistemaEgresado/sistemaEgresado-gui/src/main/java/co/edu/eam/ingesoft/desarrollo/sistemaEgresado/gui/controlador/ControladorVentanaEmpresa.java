@@ -19,7 +19,7 @@ import co.edu.eam.ingesotf.desarrollo.sistemaEgresado.logica.bos.BOSectorLaboral
 import java.util.List;
 
 /**
- *
+ *Clase responsable de controlar la ventana empresa
  * @author Cristian Sinisterra
  */
 public class ControladorVentanaEmpresa {
@@ -37,21 +37,49 @@ public class ControladorVentanaEmpresa {
         boSectorLaboral=new BOSectorLaboral();
     }
     
+    /**
+     * Metodo para listar el sector laboral
+     * @return
+     * @throws Exception
+     */
      public List<SectorLaboral> listarSectorLaboral() throws Exception {
          return boSectorLaboral.listarSectorLaboral();
      }
+     /**
+      * Metodo para listar los departamento
+      * @param pais, pais al que pertenece el departamento
+      * @return
+      * @throws Exception
+      */
      public List<Departamento> listarDepartamento(Pais pais)throws Exception{
         return boDepartamento.listarDepartamento(pais);
     }
     
+     /**
+      * Metodo para listar paises
+      * @return
+      * @throws Exception
+      */
     public List<Pais> listarPais()throws Exception{
         return boPais.listarPais();
     }
     
+    /**
+     * Metodo para listar ciudades
+     * @param departamento, departemento de la ciudad
+     * @return
+     * @throws Exception
+     */
     public List<Ciudad> listarCiudades(Departamento departamento)throws Exception{
         return boCiudad.listarCiudades(departamento);
     }
     
+    /**
+     * Metodo para editar la empresa
+     * @param empresa, empresa a editar
+     * @param contacto, contacto de la empresa a editar
+     * @throws Exception
+     */
     public void editarEmpresa(Empresa empresa, ContactoEmpresa contacto)throws Exception{
         boEmpresa.editarEmpresa(empresa, contacto);
     }

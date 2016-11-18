@@ -30,7 +30,7 @@ public class VentanaAdministrarPrograma extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jCBFacultad = new javax.swing.JComboBox<>();
+        jCBFacultad = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jTFProgramaAcademico = new javax.swing.JTextField();
         jBGuardarProgramaAcademico = new javax.swing.JButton();

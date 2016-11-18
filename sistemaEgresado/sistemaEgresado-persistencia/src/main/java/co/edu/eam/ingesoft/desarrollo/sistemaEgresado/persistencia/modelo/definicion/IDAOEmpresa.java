@@ -4,6 +4,11 @@ import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entida
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Egresado;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Empresa;
 
+/**
+ * Interface que realiza las operaciones de una empreesa
+ * @author Sebastian
+ *
+ */
 public interface IDAOEmpresa {
 
 	/**
