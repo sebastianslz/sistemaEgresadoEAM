@@ -187,7 +187,7 @@ private controladorLogin controlador;
             InformacionAcademica info=controlador.buscar((Integer.parseInt(tfCodigo.getText())));
             if (egresado != null && egresado.getNumeroDocumento().equalsIgnoreCase(jPassword.getText())) {
                 
-                VentanaEgresado v = new VentanaEgresado();
+               // VentanaEgresado v = new VentanaEgresado();
 //                v.tfNombreEgresado.setText(egresado.getNombre());
 //                v.tfApellidosEgresado.setText(egresado.getApellido());
 //                v.tfCelularEgresado.setText(egresado.getTelefono());
