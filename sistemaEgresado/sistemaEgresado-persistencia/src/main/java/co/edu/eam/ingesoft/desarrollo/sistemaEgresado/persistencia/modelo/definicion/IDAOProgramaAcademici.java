@@ -15,4 +15,6 @@ import java.util.List;
  */
 public interface IDAOProgramaAcademici {
     public List<ProgramaAcademica> listarPrograma(FacultadAcademica facultad)throws Exception;
+    
+    public void crear (ProgramaAcademica programa)throws Exception;
 }

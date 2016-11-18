@@ -19,4 +19,8 @@ public interface IDAOFacultadAcademica {
 	 * @throws Exception
 	 */
 	public List<FacultadAcademica> listarFacultad()throws Exception;
+	
+	public void crear(FacultadAcademica facultad)throws Exception;
+	
+	
 }

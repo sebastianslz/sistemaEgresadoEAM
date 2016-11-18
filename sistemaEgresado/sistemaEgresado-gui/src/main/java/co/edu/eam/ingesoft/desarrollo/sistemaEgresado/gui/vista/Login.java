@@ -5,12 +5,13 @@
  */
 package co.edu.eam.ingesoft.desarrollo.sistemaEgresado.gui.vista;
 
+import javax.swing.JOptionPane;
+
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.gui.controlador.controladorLogin;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.ContactoEmpresa;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Egresado;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.Empresa;
 import co.edu.eam.ingesoft.desarrollo.sistemaEgresado.persistencia.modelo.entidades.InformacionAcademica;
-import javax.swing.JOptionPane;
 
 /**
  *

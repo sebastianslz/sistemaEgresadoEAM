@@ -25,5 +25,9 @@ public class BOProgramaAcademico {
      public List<ProgramaAcademica> listarPrograma(FacultadAcademica facultad) throws Exception {
        return  daoProgramaAca.listarPrograma(facultad);
      }
+     
+     public void crear(ProgramaAcademica programa)throws Exception{
+    	 daoProgramaAca.crear(programa);
+     }
     
 }
