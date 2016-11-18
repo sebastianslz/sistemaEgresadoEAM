@@ -188,15 +188,15 @@ private controladorLogin controlador;
             if (egresado != null && egresado.getNumeroDocumento().equalsIgnoreCase(jPassword.getText())) {
                 
                 VentanaEgresado v = new VentanaEgresado();
-                v.tfNombreEgresado.setText(egresado.getNombre());
-                v.tfApellidosEgresado.setText(egresado.getApellido());
-                v.tfCelularEgresado.setText(egresado.getTelefono());
-                v.tfCorreoEgresado.setText(egresado.getCorreo());
-                v.tfNumeroDocumentoEgresado.setText(egresado.getNumeroDocumento());
-                v.cbTipoDocumentoEgresado.setSelectedItem(egresado.getTipoDocumento());
-                v.tFEgresado.setText(egresado.getCodigoEgresado()+"");
-                v.tfNumeroDiploma.setText(info.getNumeroDiploma());
-                v.jDFechaGrado.setDate(info.getFechaGrado());
+//                v.tfNombreEgresado.setText(egresado.getNombre());
+//                v.tfApellidosEgresado.setText(egresado.getApellido());
+//                v.tfCelularEgresado.setText(egresado.getTelefono());
+//                v.tfCorreoEgresado.setText(egresado.getCorreo());
+//                v.tfNumeroDocumentoEgresado.setText(egresado.getNumeroDocumento());
+//                v.cbTipoDocumentoEgresado.setSelectedItem(egresado.getTipoDocumento());
+//                v.tFEgresado.setText(egresado.getCodigoEgresado()+"");
+//                v.tfNumeroDiploma.setText(info.getNumeroDiploma());
+//                v.jDFechaGrado.setDate(info.getFechaGrado());
                // v.jCBProgramaAca.
 //                
                              
